@@ -1,23 +1,3 @@
-# Run, Don’t Walk: Chasing Higher FLOPS for Faster Neural Networks [CVPR 2023]
-
-This is the official Pytorch/PytorchLightning implementation of the paper: <br/>
-> [**Run, Don't Walk: Chasing Higher FLOPS for Faster Neural Networks**](https://arxiv.org/abs/2303.03667)      
-> Jierun Chen, Shiu-hong Kao, Hao He, Weipeng Zhuo, Song Wen, Chul-Ho Lee, S.-H. Gary Chan        
-> *IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2023*
-> 
-
---- 
-We propose a simple yet fast and effective partial convolution (**PConv**), as well as a latency-efficient family of architectures called **FasterNet**.
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/42027432/225219182-572e9a35-2e8e-4a93-8fb0-e17973263082.png" width=100% 
-class="center">
-</p>
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/42027432/230023468-5617e203-b65d-4269-a67d-cda36a4af6b8.png" width=100% 
-class="center">
-</p>
 
 ## Image Classification
 ### 1. Dependency Setup
