@@ -35,7 +35,7 @@ Download the [ImageNet-1K](http://image-net.org/) classification dataset and str
 
 ### 4. Evaluation
 
-We give an example evaluation command for a ImageNet-1K pre-trained FasterMLP-T0 on a single GPU:
+We give an example evaluation command for a ImageNet-1K pre-trained FasterMLP-S on a single GPU:
 ```
 python train_test.py -c cfg/fasternet_t0.yaml --checkpoint_path model_ckpt/last.ckpt --data_dir /data/imagenet1k --test_phase -g 1 -e 125
 ```
