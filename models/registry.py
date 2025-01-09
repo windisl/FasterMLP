@@ -1,9 +1,9 @@
 import torch.nn as nn
 from timm.models.registry import register_model
-from .fasternet1 import FasterNet
+from .fastermlp import FasterMLP
 
 
 @register_model
-def fasternet(**kwargs):
-    model = FasterNet(**kwargs)
+def fastermlp(**kwargs):
+    model = FasterMLP(**kwargs)
     return model
