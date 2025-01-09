@@ -8,8 +8,8 @@ conda activate fasternet
 ```
 Clone this repo and install required packages:
 ```
-git clone https://github.com/JierunChen/FasterNet
-cd FasterNet/
+git clone https://github.com/windisl/FasterMLP
+cd FasterMLP/
 pip install -r requirements.txt
 ```
 
@@ -32,14 +32,10 @@ Download the [ImageNet-1K](http://image-net.org/) classification dataset and str
 
 ### 3. Pre-trained Models
 
-| name | resolution | acc | #params | FLOPs | model |
+| name | resolution | acc | #params | FLOPs |
 |:---:|:---:|:---:|:---:| :---:|:---:|
-| FasterNet-T0 | 224x224 | 71.9 | 3.9M | 0.34G | [model](https://github.com/JierunChen/FasterNet/releases/download/v1.0/fasternet_t0-epoch.281-val_acc1.71.9180.pth) |
-| FasterNet-T1 | 224x224 | 76.2 | 7.6M | 0.85G | [model](https://github.com/JierunChen/FasterNet/releases/download/v1.0/fasternet_t1-epoch.291-val_acc1.76.2180.pth) |
-| FasterNet-T2 | 224x224 | 78.9 | 15.0M | 1.90G | [model](https://github.com/JierunChen/FasterNet/releases/download/v1.0/fasternet_t2-epoch.289-val_acc1.78.8860.pth) |
-| FasterNet-S | 224x224 | 81.3 | 31.1M | 4.55G | [model](https://github.com/JierunChen/FasterNet/releases/download/v1.0/fasternet_s-epoch.299-val_acc1.81.2840.pth) |
-| FasterNet-M | 224x224 | 83.0 | 53.5M | 8.72G | [model](https://github.com/JierunChen/FasterNet/releases/download/v1.0/fasternet_m-epoch.291-val_acc1.82.9620.pth) |
-| FasterNet-L | 224x224 | 83.5 | 93.4M | 15.49G | [model](https://github.com/JierunChen/FasterNet/releases/download/v1.0/fasternet_l-epoch.299-val_acc1.83.5060.pth) |
+| FasterNet-S | 224x224 | 71.9 | 4.3M | 0.35G |
+| FasterNet-L | 224x224 | 81.5 | 37.4M | 4.76G |
 
 ### 4. Evaluation
 
@@ -64,23 +60,9 @@ python train_test.py -c cfg/fasternet_t0.yaml \
 
 ### 5. Training
 
-FasterNet-T0 training on ImageNet-1K with a 8-GPU node:
+FasterMLP-S training on ImageNet-1K with a 8-GPU node:
 ```
 python train_test.py -g 1 --num_nodes 1 -n 4 -b 64 -e 64 --data_dir F:\FasterNet-mch\data\imagenet1k --pin_memory --wandb_project_name fasternet  --model_ckpt_dir ./model_ckpt/ --cfg cfg/fasternet_t0.yaml --wandb_offline
 ```
 To train other FasterNet variants, `--cfg` need to be changed. You may also want to change the training batch size `-b`.       
   
-
-## Acknowledgement
-This repository is built using the [timm](https://github.com/rwightman/pytorch-image-models) , [poolformer](https://github.com/sail-sg/poolformer), [ConvNeXt](https://github.com/facebookresearch/ConvNeXt) and [mmdetection](https://github.com/open-mmlab/mmdetection) repositories.
-
-## Citation
-If you find this repository helpful, please consider citing:
-```
-@article{chen2023run,
-  title={Run, Don't Walk: Chasing Higher FLOPS for Faster Neural Networks},
-  author={Chen, Jierun and Kao, Shiu-hong and He, Hao and Zhuo, Weipeng and Wen, Song and Lee, Chul-Ho and Chan, S-H Gary},
-  journal={arXiv preprint arXiv:2303.03667},
-  year={2023}
-}
-```
