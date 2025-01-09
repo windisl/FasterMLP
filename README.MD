@@ -31,11 +31,7 @@ Download the [ImageNet-1K](http://image-net.org/) classification dataset and str
 ```
 
 ### 3. Pre-trained Models
-Published FasterMLP-S 
-| name | resolution | acc | #params | FLOPs |
-|:---:|:---:|:---:|:---:| :---:|:---:|
-| FasterNet-S | 224x224 | 71.9 | 4.3M | 0.35G |
-| FasterNet-L | 224x224 | 81.5 | 37.4M | 4.76G |
+[FasterMLP-S](https://github.com/windisl/FasterMLP/releases/download/untagged-36c521c81aa994aae9fb/fastermlp-epoch.283-val_acc1.72.9740.pth) 
 
 ### 4. Evaluation
 
