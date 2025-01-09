@@ -31,7 +31,7 @@ Download the [ImageNet-1K](http://image-net.org/) classification dataset and str
 ```
 
 ### 3. Pre-trained Models
-
+Published FasterMLP-S 
 | name | resolution | acc | #params | FLOPs |
 |:---:|:---:|:---:|:---:| :---:|:---:|
 | FasterNet-S | 224x224 | 71.9 | 4.3M | 0.35G |
@@ -39,7 +39,7 @@ Download the [ImageNet-1K](http://image-net.org/) classification dataset and str
 
 ### 4. Evaluation
 
-We give an example evaluation command for a ImageNet-1K pre-trained FasterNet-T0 on a single GPU:
+We give an example evaluation command for a ImageNet-1K pre-trained FasterMLP-T0 on a single GPU:
 ```
 python train_test.py -c cfg/fasternet_t0.yaml --checkpoint_path model_ckpt/last.ckpt --data_dir /data/imagenet1k --test_phase -g 1 -e 125
 ```
@@ -51,7 +51,7 @@ should be changed accordingly, e.g., change `-e` from `125` to `1000`.
 To measure the latency on CPU/ARM and throughput on GPU (if any), run
 ```
 python train_test.py -c cfg/fasternet_t0.yaml \
---checkpoint_path model_ckpt/fasternet_t0-epoch=281-val_acc1=71.9180.pth \
+--checkpoint_path model_ckpt/fastermlp-epoch=283-val_acc1=72.9740.pth \
 --data_dir ../../data/imagenet --test_phase -g 1 -e 32  --measure_latency --fuse_conv_bn
 ```
  
@@ -62,7 +62,7 @@ python train_test.py -c cfg/fasternet_t0.yaml \
 
 FasterMLP-S training on ImageNet-1K with a 8-GPU node:
 ```
-python train_test.py -g 1 --num_nodes 1 -n 4 -b 64 -e 64 --data_dir F:\FasterNet-mch\data\imagenet1k --pin_memory --wandb_project_name fasternet  --model_ckpt_dir ./model_ckpt/ --cfg cfg/fasternet_t0.yaml --wandb_offline
+python train_test.py -g 1 --num_nodes 1 -n 4 -b 64 -e 64 --data_dir ./path/to/date --pin_memory --wandb_project_name fasternet  --model_ckpt_dir ./model_ckpt/ --cfg cfg/fasternet_t0.yaml --wandb_offline
 ```
 To train other FasterNet variants, `--cfg` need to be changed. You may also want to change the training batch size `-b`.       
   
