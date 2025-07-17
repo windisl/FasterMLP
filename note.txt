@@ -1,12 +1,1 @@
-fasternet    87.1356               FVcore FLOPs(M):  338.04128     FVcore params(M):  3.9055
 
-none + Downsampling                           71.7
-none + haar                                   71.9
-self attention + Downsampling  5.2M           71.4            
-self attention + haar    5.5M                 71.6              
-
-se + Downsampling                             72.1             
-se + haar                                     72.4            
-
-cbam + Downsampling                           72.2                
-cbam + haar                                   72.9
